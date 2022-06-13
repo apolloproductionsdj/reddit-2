@@ -15,6 +15,7 @@ import {
   SpeakerphoneIcon,
   VideoCameraIcon,
 } from "@heroicons/react/outline";
+import { signIn } from "next-auth/react";
 
 function Header() {
   return (
@@ -58,7 +59,12 @@ function Header() {
         <MenuIcon className="icon" />
       </div>
 
-      <div className="hidden items-center lg:flex cursor-pointer border border-gray-100 p-2 space-x-2">
+      {/* Sign In  */}
+
+      <div
+        onClick={() => signIn()}
+        className="hidden items-center lg:flex cursor-pointer border border-gray-100 p-2 space-x-2"
+      >
         <div className="relative h-5 w-5 flex-shrink-0">
           <Image
             objectFit="contain"
